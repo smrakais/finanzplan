@@ -1,0 +1,42 @@
+***fixkosten***
+
+gesammtkosten im monat 
+miete  = 100
+strom   = 11
+telefon = 15
+steuerbetater = 20
+kontofügrungsgebürhen = 4.95
+(auto versiucherung)
+(netflix)
+(spotify)
+(internet)
+
+***variable kosten***
+
+porto
+bürobedarf
+andere ausgaben
+
+--> Monatsbilanz ausgaben
+--> als pdf exportieren
+--> latex vgl header einlesen in dokument laden
+
+
+
+***lieferandenklasse***
+
+neuer lieferand
+name 
+kostet
+
+**********************************************
+ich möchte die kosten per aufforderung
+eingeben
+
+dann in objekt schreiben.
+
+
+am besten tag objekt in monat objekt zusammen
+führen /schreiben
+
+**********************************************
