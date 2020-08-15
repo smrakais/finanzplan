@@ -12,15 +12,21 @@ from os import path
 # also neue kosten eintragen willst
 #***************************************
 
+#***counter monat*** 
+Monat = datetime.now().strftime('%M')
+print(Monat)
+#counter =
 
-# TODO exception
-porto = 1.0#float(input ('Portokosten : '))
-buero = 23.42#float(input ('Büroartikelkosten : '))
-stuff = 333.45#float(input ('Sonstige Kosten:  '))
+# exception and user input
+while True:
+    try:
+        porto = float(input ('Portokosten : '))
+        buero = float(input ('Büroartikelkosten : '))
+        stuff = float(input ('Sonstige Kosten:  '))
+        break
+    except ValueError:
+        print('Bitte nur Zahlen eigeben! ')
 
-neueKosten = kosten(porto,buero,stuff)
-sleep(1)
-neueKosten2 = kosten (4,5,6)
 
 ##funzt summe aus zwei eingelesenen objekten
 ##********************************
@@ -33,21 +39,15 @@ neueKosten2 = kosten (4,5,6)
 #print(summe_total)
 ##********************************
 
-#einlesen per eingabe
-#...
 
-#erstellen
+#create obj
 neueKosten = kosten(porto,buero,stuff)
-value = neueKosten.get_all()
-print('normale liste ' + str(value))
 
-# in numpy 1x1 matrix
-new_array = np.array([value])
-print ('numpy 1x1 matrix '+ str(new_array))
-
+# to numpy 1x1 matrix
+new_array = np.array([neueKosten.get_all()])
 
 #*********************************************
-#check ob kosten.txt existiert
+#check if kosten.txt exists
 path = bool(path.exists('kosten.txt'))
 
 if not path:

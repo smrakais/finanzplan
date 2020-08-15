@@ -21,14 +21,8 @@ class kosten:
         self.month = monat 
         self.year = jahr 
 
-    def make_list(self):
-        if 1<2 :
-            liste = [self]
-            liste.extend(self)
-        else:
-            print('fehler')        
-
-    #weiß nicht was besser string oder integer mal sehen
+    
+#weiß nicht was besser string oder integer mal sehen
     def get_all(self):
         alles=[self.porto,self.buero,self.stuff]
         return  alles
