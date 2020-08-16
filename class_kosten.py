@@ -3,19 +3,21 @@ from datetime import datetime
 
 class kosten:
     def __init__(self,porto,buero,stuff):
-        datum = date.today()
-        tag = datum.day
-        monat = datum.month
-        jahr = datum.year
-
+        
         #veräderbar
         self.porto = porto
         self.buero = buero 
         self.stuff = stuff
         
         #fix
+        #attributes time/date
         stringZeit = datetime.now().strftime('%H:%M:%S')
         self.time = stringZeit
+
+        datum = date.today()
+        tag = datum.day
+        monat = datum.month
+        jahr = datum.year
 
         self.day = tag
         self.month = monat 

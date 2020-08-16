@@ -13,9 +13,11 @@ from os import path
 #***************************************
 
 #***counter monat*** 
-Monat = datetime.now().strftime('%M')
-print(Monat)
-#counter =
+datum = date.today()
+monat = datum.month
+#brauche ich später als numpy array 
+monat_array = np.array([monat])
+print(monat_array)
 
 # exception and user input
 while True:
@@ -48,16 +50,63 @@ new_array = np.array([neueKosten.get_all()])
 
 #*********************************************
 #check if kosten.txt exists
-path = bool(path.exists('kosten.txt'))
+#path = bool(path.exists('kosten.txt'))
 
-if not path:
-    np.savetxt('kosten.txt',new_array,fmt='%3.2f')
-    print('Was False')
-elif path:
+if not bool(path.exists('kosten.txt')):
+    np.savetxt('kosten.txt', new_array,fmt='%3.2f')
+    print('kosten.txt hat noch nicht existiert und wurde jetzt erzeugt.')
+elif bool(path.exists('kosten.txt')):
     tfile=open('kosten.txt','a')
     np.savetxt(tfile,new_array,fmt='%3.2f')
     tfile.close()
-    print('Was True')
+    print('kosten.txt existiert. Neue Kosten wurden hinzugefügt.')
+else:
+    print('Fehler bei dem einlesen des Pfades. Raphael anrufen!')
+#**********************************************
+
+#*******************************************
+#******TEST*****
+
+print('angekommen')
+if not bool(path.exists('monat.txt')):
+    np.savetxt('monat.txt',monat_array,fmt='%d')
+    print('monat.txt hat noch nicht existiert und wurde jetzt erzeugt.')
+    print('Neuer Monat wurde erstellt.')
+elif bool(path.exists('monat.txt')):
+    print('Pfad existiert.')
+    #monat in txt auslesen
+    #TODO problem value ist kein int sondern wird trostzdem als array aufgefasst 
+    #--> idee alles mit open load und close machen
+    value = np.genfromtxt('monat.txt',unpack=True)
+    print('hinter value')
+    print(value)
+    #letzten eintrag der liste enehmen
+    if monat == value[-1]:
+        tfile=open('monat.txt','a')
+        np.savetxt(tfile,monat_array,fmt='%d')
+        tfile.close()
+        print('Wir sind noch im gleichen Monat.')
+    elif monat != value[-1]:
+        
+        print('Wir sind nicht mehr im gleichen Monat. Neuer Monat wird erstellt.')
+                
+        #**************************************************************************
+        # speichern der kosten mit datum
+        kosten = np.genfromtxt('kosten.txt',unpack=True)
+        #letzten wert nicht reinladen da der für den nächten monat ist
+        np.savetxt('build/kosten_%i.txt' %datum, kosten[0:len(kosten)],fmt='%3.2f')
+        #***************************************************************************
+    
+        #***************************************************************************
+        #kosten.txt überschreiben
+        tfile=open('kosten.txt','w')
+        np.savetxt(kosten.txt,new_array,fmt='%3.2f')
+        tfile.close()
+        #***************************************************************************
+
+        np.savetxt('monat.txt',monat_array,fmt='%d')
+    else:
+        print('Fehler im Abschnitt:  monat =! value[-1]')
+
 else:
     print('fehler bei dem einlesen des pfades')
-#**********************************************
