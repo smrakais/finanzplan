@@ -91,5 +91,5 @@ datum = date.today()
 #else:
 #    print('fehler bei dem einlesen des pfades')
 
-i=np.genfromtxt('kosten.txt', unpack=True)
-print(i)
+i=np.genfromtxt('kosten.txt')
+print(i[0:-1])

@@ -13,30 +13,19 @@ kontofügrungsgebürhen = 4.95
 
 ***variable kosten***
 
-porto
+porto 
 bürobedarf
 andere ausgaben
 
 --> Monatsbilanz ausgaben
---> als pdf exportieren
---> latex vgl header einlesen in dokument laden
+--> als pdf exportieren ***************TODO
+--> latex vgl header einlesen in dokument laden***************TODO
+
+ funktion letzten wert in kosten löschen. ***************TODO
 
 
-
-***lieferandenklasse***
+***lieferandenklasse*** ***************TODO
 
 neuer lieferand
 name 
 kostet
-
-**********************************************
-ich möchte die kosten per aufforderung
-eingeben
-
-dann in objekt schreiben.
-
-
-am besten tag objekt in monat objekt zusammen
-führen /schreiben
-
-**********************************************
