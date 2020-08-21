@@ -85,8 +85,6 @@ elif bool(path.exists('monat.txt')):
             tfile.close()
             print('normaler durchgang')
             print('Wir sind noch im gleichen Monat.')
-            # TODO except block hinter das erste else?
-            # TODO noch der fall wenn nicht mehr der gleiche monat ist 
         elif monat != value[-1]:
         
             print('Wir sind nicht mehr im gleichen Monat. Neuer Monat wird erstellt.')

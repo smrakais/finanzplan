@@ -28,7 +28,9 @@ class kosten:
     def get_all(self):
         alles=[self.porto,self.buero,self.stuff]
         return  alles
-    
+
+#TODO get date? und dann in txt soeichern
+
     def get_day(self):
         return self.day
 

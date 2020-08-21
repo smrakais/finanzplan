@@ -1,0 +1,3 @@
+to create a python file do :
+
+pyuic5 -x file.ui -o file.py
