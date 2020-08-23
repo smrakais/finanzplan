@@ -33,7 +33,7 @@ tab1 = TexTable([porto, buero ,stuff],
 tab1.setRowRounding(0,2)
 tab1.setRowRounding(1,2)
 tab1.setRowRounding(2,2)
-tab1.writeFile('tab_monatsabrechnung_drucken_part_1.tex')
+tab1.writeFile('build/tab_monatsabrechnung_drucken_part_1.tex')
 
 
 #Tab 2
@@ -48,8 +48,9 @@ tab2 = TexTable([liste, liste2 ,liste3],
 tab2.setRowRounding(0,2)
 tab2.setRowRounding(1,2)
 tab2.setRowRounding(2,2)
-tab2.writeFile('tab_monatsabrechnung_drucken_part_2.tex')
+tab2.writeFile('build/tab_monatsabrechnung_drucken_part_2.tex')
 
 
 #executes the given command in the terminal
-os.system('make')
+os.system('make') #TODO wenn sich die tabellen ändern muss das protokoll.tex neu kompiliert werden.!
+#--> du musst die tabellen ins makefile packen denkde ich sonst klappt es nicht. 
