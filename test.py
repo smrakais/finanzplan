@@ -2,7 +2,6 @@ from datetime import date
 from datetime import datetime
 
 import numpy as np
-
 #*********************************************
 datum = date.today()
 #print(datum)
@@ -48,48 +47,62 @@ datum = date.today()
 #    print('keine zahl') 
 ##**********************************************************
 
-#datum = date.today()
-#monat = datum.month
-#
-#path_monat = bool(path.exists('monat.txt'))
-#
-#if not path_monat:
-#    np.savetxt('monat.txt',monat,fmt='%3.2f')
-#    print('Pfad hat noch nicht existiert und wurde jetzt erzeugt.')
-#elif path:
-#    print('Pfad existiert.')
-#    #monat in txt auslesen
-#    value = np.genfromtxt('monat.txt',unpack = True)
-#    #letzten eintrag der liste enehmen
-#    if monat == value[-1]:
-#        tfile=open('monat.txt','a')
-#        np.savetxt(tfile,monat,fmt='%3.2f')
-#        tfile.close()
-#        print('Wir sind noch im gleichen Monat.')
-#    elif monat =! value[-1]:
-#        
-#        print('Wir sind nicht mehr im gleichen Monat. Neuer Monat wird erstellt.')
-#                
-#        #**************************************************************************
-#        # speichern der kosten mit datum
-#        kosten = np.genfromtxt('kosten.txt',unpack=True)
-#        #letzten wert nicht reinladen da der für den nächten monat ist
-#        np.savetxt('build/kosten_%i.txt' %datum, kosten[0:len(kosten)],fmt='%3.2f')
-#        #***************************************************************************
-#    
-#        #***************************************************************************
-#        #kosten.txt überschreiben
-#        tfile=open('kosten.txt','w')
-#        np.savetxt(kosten.txt,new_array,fmt='%3.2f')
-#        tfile.close()
-#        #***************************************************************************
-#
-#        np.savetxt('monat.txt',monat,fmt='%3.2f')
-#    else:
-#        print('Fehler im Abschnitt:  monat =! value[-1]')
-#
-#else:
-#    print('fehler bei dem einlesen des pfades')
 
-i=np.genfromtxt('kosten.txt')
-print(i[0:-1])
+
+#************************************************************************
+#funzt
+#executes the given command in the terminal
+#import os              
+#os.system("python kosten.py")
+#************************************************************************
+
+
+
+#************************************************************************
+#**************EINE TABELLE**********************************************
+#************************************************************************
+
+#from texutils.table import TexTable
+#from texutils.table import Combined
+#
+#tab1 = TexTable([T8,T7,dt],
+#                        [r'$T_\text{nah}$ / $\si{\celsius}$',#FUCKING KLEINES si!!!!!!! VERFICKTE SCHEISSE
+#                        r'$T_\text{fern}$ / $\si{\celsius}$',
+#                        r'$\Delta t$ / $\si{\second}$'],
+#                        label='amplituden',
+#                        caption='Amplitudenwerte der Temperatur und der Zeit des Edelstahls'
+#                )
+#
+#tab1.setRowRounding(0,0)
+#tab1.setRowRounding(1,0)
+#tab1.setRowRounding(2,0)
+#
+#tab1.writeFile('build/tab_T8_T7.tex')   #amplitudenwerte und zeit
+
+
+
+
+#************************************************************************
+#*****************ZWEI TABELLEN KOMBINIERT*******************************
+#************************************************************************
+
+#tabelle hysterese ohne neukurve
+#t1 = TexTable([i,b], [r'$I$ / $\si{\ampere}$',
+#                      r'$B$ / $\si{\milli\tesla}$'], label='tab:hysterese',
+#             caption='Messdaten zum erstellen der Hysteresekurve ohne Neukurve')
+#t1.setRowRounding(1, 0)
+#t1.setRowRounding(0, 0)
+#
+# #eig. würde hier jetzte noch ein  t.writeFile('build/tabHysterese.tex') stehen und unten auch aber so würde er ja 2 einzelne listen machen aber wir nehmen combined und er verinigt 2 in eine
+#
+##tabelle hysterese neukurve
+#t2 = TexTable([i2,b2], [r'$I$ / $\si{\ampere}$',
+#                      r'$B$ / $\si{\milli\tesla}$'], label='tab:hysterese2',
+#             caption='Messdaten zum erstellen der Neukurve')
+#t2.setRowRounding(1, 0)
+#t1.setRowRounding(0, 0)
+#
+#
+#
+## zwei listen in einem
+#Combined([t1, t2], caption='Messdaten').writeFile('build/tabHystereseAll.tex')

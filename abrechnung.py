@@ -15,7 +15,7 @@ try:
 
     #array fixkosten
     fixkosten = np.array([miete,strom,telefon,steuerberater,kontofuehrungsgebuehren])
-    fix_sum= round(np.sum(fixkosten), 2)
+    fix_sum = round(np.sum(fixkosten), 2)
     print('Die Fixkosten sind '+ str(fix_sum))
 
     #gesamtkosten
