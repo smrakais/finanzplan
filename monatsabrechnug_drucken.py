@@ -1,8 +1,14 @@
 #creates a latex tab with monthly expenses
 
-from abrechnung import porto, buero, stuff, fix_sum, gesamtkosten 
-#imports the variable porto, buero , etc. NOTE!--> this runs the .py file! 
-#which makes sense because I want to have the value of a variable
+import sys #wird zum abrechen des programs gebraucht fall beim importieren von porto etc. ein exception geworfen wird
+
+try:
+        from abrechnung import porto, buero, stuff, fix_sum, gesamtkosten 
+        #imports the variable porto, buero , etc. NOTE!--> this runs the .py file! 
+        #which makes sense because I want to have the value of a variable
+except ImportError:
+        print('Für den Monat kann keine Abrechnung erstellt werden, da keine Daten vorliegen. ')
+        sys.exit(1) #program is canceled
 
 import numpy as np
 import os              
@@ -52,5 +58,5 @@ tab2.writeFile('build/tab_monatsabrechnung_drucken_part_2.tex')
 
 
 #executes the given command in the terminal
-os.system('make') #TODO wenn sich die tabellen ändern muss das protokoll.tex neu kompiliert werden.!
-#--> du musst die tabellen ins makefile packen denkde ich sonst klappt es nicht. 
+os.system('touch protokoll.tex') #lel ich hab nicht ganz verstanden warum das damit jetzt geht XD
+os.system('make')
