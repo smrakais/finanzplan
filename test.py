@@ -106,3 +106,17 @@ datum = date.today()
 #
 ## zwei listen in einem
 #Combined([t1, t2], caption='Messdaten').writeFile('build/tabHystereseAll.tex')
+
+#*******************************************
+#funzt 
+#liste =[1,2,3]
+#porto = 1
+#
+##porto = [porto]
+#print(np.shape(porto))
+#
+#if np.shape(porto)==():
+#    print('nur einzelner wert')
+#else:
+#    print('liste')    
+#*******************************************
