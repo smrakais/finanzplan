@@ -12,14 +12,18 @@ import numpy as np
     sondern dann die eine zeile als liste mit 3 einträgen
     identifiziert.
 
+    Evtl fix mit readlines??
+
     am einfachsten zeile irgwie als 1x1 matrix auffassen
     und durch löschen dann leere matrix erzeugen
     oder file komplett löschen
 '''
-
-liste = np.genfromtxt('kosten.txt')
-print(liste)
-np.savetxt('kosten.txt',liste[0:-1],fmt='%3.2f')
-print('Letzer Eintrag wurde erfolgreich gelöscht.')
+try:
+    liste = np.genfromtxt('kosten.txt')
+    print(liste)
+    np.savetxt('kosten.txt',liste[0:-1],fmt='%3.2f')
+    print('Letzer Eintrag wurde erfolgreich gelöscht.')
+except OSError:
+    print('Es kann kein Wert gelöscht werden, da keine Daten existiern.')
    
      
