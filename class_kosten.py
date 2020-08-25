@@ -24,6 +24,7 @@ class kosten:
         self.year = jahr 
 
     
+    
 #weiß nicht was besser string oder integer mal sehen
     def get_all(self):
         alles=[self.porto,self.buero,self.stuff]
