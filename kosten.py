@@ -12,6 +12,14 @@ from os import path
 # also neue kosten eintragen willst
 #***************************************
 
+# check if build folder exists
+# needs it for change in month because txt is saved in build folder
+if bool(path.exists('build'))== True:
+        print('build ordner existert')
+elif bool(path.exists('build')) == False:
+        print('build Ordner existiert noch nicht und wird jetzt erzeugt!')
+        os.system('mkdir build')
+
 #***counter monat*** 
 datum = date.today()
 monat = datum.month

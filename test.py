@@ -1,6 +1,7 @@
 from datetime import date
 from datetime import datetime
 
+import os
 import numpy as np
 #*********************************************
 datum = date.today()
@@ -119,4 +120,18 @@ datum = date.today()
 #    print('nur einzelner wert')
 #else:
 #    print('liste')    
+#*******************************************
+
+#*******************************************
+#funzt
+#fix letzten wert löschen
+#kosten = np.genfromtxt('kosten.txt')
+#
+#print(kosten.shape)
+#
+#if  kosten.shape == (3,):
+#    os.remove('kosten.txt')
+#    os.remove('monat.txt')
+#else:
+#    print('letzer wert erfolgreich gelöscht')
 #*******************************************

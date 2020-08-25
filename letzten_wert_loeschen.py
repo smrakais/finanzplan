@@ -1,27 +1,13 @@
 import numpy as np 
+import os
 
-#TODO
-'''
-    muss noch überarbeitet werden
-    funktioniert bis jetzt nur wenn 
-    in kosten.txt mehr als ein eintrag ist 
-    und kosten.txt bereits existiert 
-
-    fehler bei nur einem eintrag da er nicht
-    dann eine zeile der matrix löscht 
-    sondern dann die eine zeile als liste mit 3 einträgen
-    identifiziert.
-
-    Evtl fix mit readlines??
-
-    am einfachsten zeile irgwie als 1x1 matrix auffassen
-    und durch löschen dann leere matrix erzeugen
-    oder file komplett löschen
-'''
 try:
-    liste = np.genfromtxt('kosten.txt')
+    liste = np.genfromtxt('kosten.txt')# actually lists in a list (like a matrix)
     print(liste)
     np.savetxt('kosten.txt',liste[0:-1],fmt='%3.2f')
+    if  liste.shape == (3,):            # if only one entry is in txt file gets deleted completely
+        os.remove('kosten.txt')
+        os.remove('monat.txt')
     print('Letzer Eintrag wurde erfolgreich gelöscht.')
 except OSError:
     print('Es kann kein Wert gelöscht werden, da keine Daten existiern.')

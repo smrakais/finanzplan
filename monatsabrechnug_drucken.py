@@ -11,11 +11,12 @@ except ImportError:
         sys.exit(1) #program is canceled
 
 import numpy as np
-import os              
+import os    
+#import os.path
+#from os import path          
 from datetime import date
 
 from texutils.table import TexTable
-
 
 # for tab entry
 gesamtkosten_ohne_fixkosten = round(gesamtkosten - fix_sum,2)
@@ -72,7 +73,7 @@ except TypeError:
         buero = [buero]
         stuff = [stuff]
 
-         #Tab 1
+        #Tab 1
         tab1 = TexTable([porto, buero ,stuff],
                                 [r'Portokosten / \euro',
                                  r'Büroartikel / \euro',
