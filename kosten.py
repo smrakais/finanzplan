@@ -20,7 +20,7 @@ monat_array = np.array([monat])
 #print(monat_array)
 
 # exception and user input
-while True:
+while True:     #TODO check if number has more than two digits after komma
     try:
         porto = float(input ('Portokosten : '))
         buero = float(input ('Büroartikelkosten : '))
