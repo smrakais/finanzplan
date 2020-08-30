@@ -32,6 +32,9 @@ print(np.shape(porto))
 print(porto)
 print(liste3)
 
+#date:
+#datelist =   
+
 try:
         #Tab 1
         tab1 = TexTable([porto, buero ,stuff],

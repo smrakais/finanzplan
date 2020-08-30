@@ -19,9 +19,10 @@ class kosten:
         monat = datum.month
         jahr = datum.year
 
+        self.datum = datum
         self.day = tag
         self.month = monat 
-        self.year = jahr 
+        self.year = jahr
 
     
 #weiß nicht was besser string oder integer mal sehen
@@ -39,21 +40,21 @@ class kosten:
 
     def get_year(self):
         print(self.year)
-        return year
+        return self.year
 
     def get_time(self):
         return self.time
 
     def get_porto(self):
         #print(self.porto)
-        return porto
+        return self.porto
     
     def get_buero(self):
         #print(self.buero)
-        return buero
+        return self.buero
 
     def get_stuff(self):
         #print(self.stuff)
-        return stuff
+        return self.stuff
 
     #def get_total(self):

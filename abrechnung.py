@@ -1,7 +1,7 @@
 import numpy as np 
 
 try:
-    porto, buero, stuff = np.genfromtxt('kosten.txt', unpack = True)
+    porto, buero, stuff = np.genfromtxt('build/kosten.txt', unpack = True)
 
     #array porto buero stuff
     ergebnis = np.array([round(np.sum(porto), 2),round(np.sum(buero),2),round(np.sum(stuff),2)])

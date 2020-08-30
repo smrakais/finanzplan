@@ -135,3 +135,9 @@ datum = date.today()
 #else:
 #    print('letzer wert erfolgreich gelöscht')
 #*******************************************
+
+tfile =  open('build/date.txt','r')
+#print(str(tfile.read()))
+liste = [str(tfile.readlines())]
+print(liste) #TODO das doofe ist er macht die \n 
+tfile.close()
