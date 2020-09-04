@@ -136,8 +136,20 @@ datum = date.today()
 #    print('letzer wert erfolgreich gelöscht')
 #*******************************************
 
-tfile =  open('build/date.txt','r')
+#tfile =  open('build/date.txt','r')
 #print(str(tfile.read()))
-liste = [str(tfile.readlines())]
-print(liste) #TODO das doofe ist er macht die \n 
-tfile.close()
+#liste = [str(tfile.readlines())]
+#print(liste) #TODO das doofe ist er macht die \n 
+#tfile.close()
+
+#letzten wert von date.txt löschen
+
+
+####################################################
+####DIGGA WILLST DU MICH FICKEN!!!!  dtype = str####
+####################################################
+date = np.genfromtxt('build/date.txt',dtype = str )
+print(date[0:-1])
+date = date[0:-1]
+np.savetxt('build/date.txt' ,date,% (str(X.dtype), format)))
+#--> BESCHTE WO GIBT

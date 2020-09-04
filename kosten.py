@@ -151,11 +151,12 @@ else:
 
 
 #save date
-
 date = "build/date.txt"
 datefile = open(date, 'a')
 datefile.write(str(neueKosten.datum))
-datefile.write('\n') #TODO das doofe ist er macht ein \\n ist der liste
-print(str(datefile.read()))
-#datefile.write("\n")
+datefile.write('\n')
+print('Das aktuelle Datum wurde in date.txt gespeichert!')
 datefile.close()
+
+#datefile = open(date,'r')
+#tfile = [str(datefile.readlines())]
