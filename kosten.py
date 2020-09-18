@@ -1,3 +1,9 @@
+#***************************************
+# das programm aufrüfen wenn
+# ein neuen eintrag anlegen möchtest 
+# also neue kosten eintragen willst
+#***************************************
+
 from class_kosten import kosten
 from datetime import date
 from datetime import datetime
@@ -6,11 +12,6 @@ import numpy as np
 import os.path
 from os import path
 
-#***************************************
-# das programm aufrüfen wenn
-# ein neuen eintrag anlegen möchtest 
-# also neue kosten eintragen willst
-#***************************************
 
 # check if build folder exists
 # needs it for change in month because txt is saved in build folder
@@ -25,7 +26,6 @@ datum = date.today()
 monat = datum.month
 #brauche ich später als numpy array 
 monat_array = np.array([monat])
-#print(monat_array)
 
 # exception and user input
 while True:     #TODO check if number has more than two digits after komma
@@ -37,28 +37,12 @@ while True:     #TODO check if number has more than two digits after komma
     except ValueError:
         print('Bitte nur Zahlen eingeben! ')
 
-
-##funzt summe aus zwei eingelesenen objekten
-##********************************
-#data = neueKosten.get_all()
-#data2 = neueKosten2.get_all()
-#
-#liste = np.array = ([])
-#liste.append(data)
-#summe_total= np.sum(liste, axis=0)
-#print(summe_total)
-##********************************
-
-
 #create obj
 neueKosten = kosten(porto,buero,stuff)
 # to numpy 1x1 matrix
 new_array = np.array([neueKosten.get_all()])
 
-#*********************************************
-#check if kosten.txt exists
-#path = bool(path.exists('kosten.txt'))
-
+#*****************************************************************************************
 if not bool(path.exists('build/kosten.txt')):
     np.savetxt('build/kosten.txt', new_array,fmt='%3.2f')
     print('kosten.txt hat noch nicht existiert und wurde jetzt erzeugt.')
@@ -69,11 +53,10 @@ elif bool(path.exists('build/kosten.txt')):
     print('kosten.txt existiert. Neue Kosten wurden hinzugefügt.')
 else:
     print('Fehler bei dem einlesen des Pfades. Raphael anrufen!')
-#**********************************************
+#*****************************************************************************************
 
-#*******************************************
+#*****************************************************************************************
 #******TEST*****
-
 print('angekommen')
 if not bool(path.exists('build/monat.txt')):
     np.savetxt('build/monat.txt',monat_array,fmt='%d')
@@ -149,7 +132,6 @@ else:
     print('fehler bei dem einlesen des pfades')
 
 
-
 #save date
 date = "build/date.txt"
 datefile = open(date, 'a')
@@ -158,5 +140,10 @@ datefile.write('\n')
 print('Das aktuelle Datum wurde in date.txt gespeichert!')
 datefile.close()
 
-#datefile = open(date,'r')
-#tfile = [str(datefile.readlines())]
+
+'''
+TODO COOL WÄRE ES WENN ICH ALLE DATEN IN EINER TXT SPEICHERE, 
+ALSO KOSTEN UND DATUM ETC WEIL ICH WEISS NICHT GENAU WIE ICH DIE TABLE.PY IN DEN
+REXUTILS VERÄNDERN MUSS DAMIT ER DIE DATEN AUCH IN DER TABELE SPEICHRT.
+
+'''

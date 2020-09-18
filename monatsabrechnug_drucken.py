@@ -28,21 +28,23 @@ liste2 = [gesamtkosten_ohne_fixkosten]
 liste3 = [gesamtkosten]
 
 #check
-print(np.shape(porto))
-print(porto)
-print(liste3)
+#print(np.shape(porto))
+#print(porto)
+#print(liste3)
 
 #date:
-#datelist =   
+date_list = []
+date_list =  np.genfromtxt('build/date.txt', dtype = str )
+print(date_list)
 
 try:
-        #Tab 1
+        
         tab1 = TexTable([porto, buero ,stuff],
                                 [r'Portokosten / \euro',
                                  r'Büroartikel / \euro',
                                  r'Sonstige Ausgaben / \euro'],
                                 label='monatsabrechnung_1',
-                                caption='Tabelle der variablen Kosten.'#TODO mit date 
+                                caption='Tabelle der variablen Kosten.'
                         )
 
         tab1.setRowRounding(0,2)
@@ -82,7 +84,7 @@ except TypeError:
                                  r'Büroartikel / \euro',
                                  r'Sonstige Ausgaben / \euro'],
                                 label='monatsabrechnung_1',
-                                caption='Tabelle der variablen Kosten.'#TODO mit date 
+                                caption='Tabelle der variablen Kosten.' 
                         )
 
         tab1.setRowRounding(0,2)

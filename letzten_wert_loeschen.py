@@ -17,6 +17,8 @@ try:
         np.savetxt('build/kosten.txt',liste_kosten[0:-1],fmt='%3.2f')
         np.savetxt('build/monat.txt',liste_monat[0:-1],fmt='%3.2f')
         np.savetxt('build/date.txt',liste_date[0:-1],fmt = '%10s')
+        print('Letzer Eintrag wurde erfolgreich gelöscht.')
+
     
 except OSError:
     print('Es kann kein Wert gelöscht werden, da keine Daten existiern.')

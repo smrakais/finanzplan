@@ -148,8 +148,8 @@ datum = date.today()
 ####################################################
 ####DIGGA WILLST DU MICH FICKEN!!!!  dtype = str####
 ####################################################
-date = np.genfromtxt('build/date.txt',dtype = str )
-print(date[0:-1])
-date = date[0:-1]
-np.savetxt('build/date.txt' ,date,% (str(X.dtype), format)))
+#date = np.genfromtxt('build/date.txt',dtype = str )
+#print(date[0:-1])
+#date = date[0:-1]
+#np.savetxt('build/date.txt', date,fmt='%10s')
 #--> BESCHTE WO GIBT
